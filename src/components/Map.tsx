@@ -78,6 +78,7 @@ export function addRows() {
           rowData.direction,
           vehicle.color
         );
+        vehicle.ref = car;
         row.add(car);
       });
 

@@ -4,6 +4,7 @@ import { Camera } from "./components/Camera";
 import { DirectionalLight } from "./components/DirectionalLight";
 import { Player } from "./components/Player";
 import { map, initializeMap } from "./components/Map";
+import { animateVehicles } from "./animateVehicles";
 import "./index.css";
 
 const player = Player();
@@ -28,4 +29,10 @@ function initializeGame() {
 }
 
 const renderer = Renderer();
-renderer.render(scene, camera);
+renderer.setAnimationLoop(animate);
+
+function animate() {
+  animateVehicles();
+
+  renderer.render(scene, camera);
+}
