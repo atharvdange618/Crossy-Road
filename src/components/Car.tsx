@@ -16,6 +16,8 @@ export function Car(
     new THREE.MeshLambertMaterial({ color, flatShading: true })
   );
   main.position.z = 12;
+  main.castShadow = true;
+  main.receiveShadow = true;
   car.add(main);
 
   const cabin = new THREE.Mesh(
