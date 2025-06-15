@@ -2,12 +2,12 @@ import * as THREE from "three";
 import { Renderer } from "./components/Renderer";
 import { Camera } from "./components/Camera";
 import { DirectionalLight } from "./components/DirectionalLight";
-import { Player } from "./components/Player";
+import { player } from "./components/Player";
 import { map, initializeMap } from "./components/Map";
 import { animateVehicles } from "./animateVehicles";
+import { animatePlayer } from "./animatePlayer";
+import "./collectUserInput";
 import "./index.css";
-
-const player = Player();
 
 const scene = new THREE.Scene();
 scene.add(player);
@@ -33,6 +33,7 @@ renderer.setAnimationLoop(animate);
 
 function animate() {
   animateVehicles();
+  animatePlayer();
 
   renderer.render(scene, camera);
 }
