@@ -73,4 +73,7 @@ export function stepCompleted() {
   if (direction === "right") position.currentTile += 1;
 
   if (position.currentRow > rows.length - 10) addRows();
+
+  const scoreDOM = document.getElementById("score");
+  if (scoreDOM) scoreDOM.innerText = position.currentRow.toString();
 }
